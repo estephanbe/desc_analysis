@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- This meta tag ensures responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DISC Personality Assessment - Step by Step (Mobile Friendly)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      padding: 0 1rem;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      text-align: center;
+    }
+    fieldset {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    legend {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.75rem;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      background-color: #f9f9f9;
+    }
+    input[type="radio"] {
+      margin-right: 0.5rem;
+      transform: scale(1.2);
+      vertical-align: middle;
+    }
+    button {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      margin: 0.5rem 0.25rem;
+      border: none;
+      background-color: #007BFF;
+      color: #fff;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+      cursor: pointer;
+    }
+    .question-page {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    #result {
+      border-top: 2px solid #333;
+      margin-top: 2rem;
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>DISC Personality Assessment</h1>
+  <form id="discForm">
+    <!-- Page 1 (Question 1) -->
+    <div class="question-page active" id="page1">
+      <fieldset>
+        <legend>Question 1</legend>
+        <label>
+          <input type="radio" name="q1" value="S" required>
+          Restrained / متحفظ / لا أشارك
+        </label>
+        <label>
+          <input type="radio" name="q1" value="D">
+          Forceful / مؤثر
+        </label>
+        <label>
+          <input type="radio" name="q1" value="C">
+          Careful / حذر
+        </label>
+        <label>
+          <input type="radio" name="q1" value="I">
+          Expressive / معبر
+        </label>
+      </fieldset>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 2 (Question 2) -->
+    <div class="question-page" id="page2">
+      <fieldset>
+        <legend>Question 2</legend>
+        <label>
+          <input type="radio" name="q2" value="D" required>
+          Pioneering / ريادي
+        </label>
+        <label>
+          <input type="radio" name="q2" value="C">
+          Correct / سديد / مصيب
+        </label>
+        <label>
+          <input type="radio" name="q2" value="I">
+          Exciting / متحمس / متشوق
+        </label>
+        <label>
+          <input type="radio" name="q2" value="S">
+          Satisfied / قنوع
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 3 (Question 3) -->
+    <div class="question-page" id="page3">
+      <fieldset>
+        <legend>Question 3</legend>
+        <label>
+          <input type="radio" name="q3" value="S" required>
+          Willing / باذل
+        </label>
+        <label>
+          <input type="radio" name="q3" value="I">
+          Animated / مفعم بالحيوية
+        </label>
+        <label>
+          <input type="radio" name="q3" value="D">
+          Bold / جريء
+        </label>
+        <label>
+          <input type="radio" name="q3" value="C">
+          Precise / دقيق
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 4 (Question 4) -->
+    <div class="question-page" id="page4">
+      <fieldset>
+        <legend>Question 4</legend>
+        <label>
+          <input type="radio" name="q4" value="D" required>
+          Argumentative / مجادل
+        </label>
+        <label>
+          <input type="radio" name="q4" value="C">
+          Doubting / شكاك
+        </label>
+        <label>
+          <input type="radio" name="q4" value="S">
+          Indecisive / غير حاسم
+        </label>
+        <label>
+          <input type="radio" name="q4" value="I">
+          Unpredictable / يصعب التكهن بتصرفاتي
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 5 (Question 5) -->
+    <div class="question-page" id="page5">
+      <fieldset>
+        <legend>Question 5</legend>
+        <label>
+          <input type="radio" name="q5" value="C" required>
+          Respectful / احترم الآخرين
+        </label>
+        <label>
+          <input type="radio" name="q5" value="I">
+          Out-going / منطلق / غير متحفظ
+        </label>
+        <label>
+          <input type="radio" name="q5" value="S">
+          Patient / صبور
+        </label>
+        <label>
+          <input type="radio" name="q5" value="D">
+          Daring / جريء / احب التحدي
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 6 (Question 6) -->
+    <div class="question-page" id="page6">
+      <fieldset>
+        <legend>Question 6</legend>
+        <label>
+          <input type="radio" name="q6" value="D" required>
+          Persuasive / مقنع
+        </label>
+        <label>
+          <input type="radio" name="q6" value="S">
+          Self-reliant / اعتمد على نفسي
+        </label>
+        <label>
+          <input type="radio" name="q6" value="C">
+          Logical / منطقي
+        </label>
+        <label>
+          <input type="radio" name="q6" value="I">
+          Gentle / لطيف / رقيق
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 7 (Question 7) -->
+    <div class="question-page" id="page7">
+      <fieldset>
+        <legend>Question 7</legend>
+        <label>
+          <input type="radio" name="q7" value="C" required>
+          Cautious / حذر / محترس
+        </label>
+        <label>
+          <input type="radio" name="q7" value="S">
+          Even-tempered / هادئ الطبع
+        </label>
+        <label>
+          <input type="radio" name="q7" value="D">
+          Decisive / حاسم
+        </label>
+        <label>
+          <input type="radio" name="q7" value="I">
+          Life-of-the-party / باعث على المرح
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 8 (Question 8) -->
+    <div class="question-page" id="page8">
+      <fieldset>
+        <legend>Question 8</legend>
+        <label>
+          <input type="radio" name="q8" value="I" required>
+          Popular / أتمتع بالشعبية
+        </label>
+        <label>
+          <input type="radio" name="q8" value="D">
+          Assertive / جازم
+        </label>
+        <label>
+          <input type="radio" name="q8" value="C">
+          Perfectionist / أسعى للكمال / كمالي
+        </label>
+        <label>
+          <input type="radio" name="q8" value="S">
+          Generous / كريم
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 9 (Question 9) -->
+    <div class="question-page" id="page9">
+      <fieldset>
+        <legend>Question 9</legend>
+        <label>
+          <input type="radio" name="q9" value="I" required>
+          Colorful / نابض بالحياة / مبهج
+        </label>
+        <label>
+          <input type="radio" name="q9" value="C">
+          Modest / متواضع
+        </label>
+        <label>
+          <input type="radio" name="q9" value="S">
+          Easy-going / يسهل التعامل معي
+        </label>
+        <label>
+          <input type="radio" name="q9" value="D">
+          Unyielding / عنيد
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 10 (Question 10) -->
+    <div class="question-page" id="page10">
+      <fieldset>
+        <legend>Question 10</legend>
+        <label>
+          <input type="radio" name="q10" value="C" required>
+          Systematic / نظامي
+        </label>
+        <label>
+          <input type="radio" name="q10" value="I">
+          Optimistic / متفائل
+        </label>
+        <label>
+          <input type="radio" name="q10" value="D">
+          Persistent / مثابر
+        </label>
+        <label>
+          <input type="radio" name="q10" value="S">
+          Accommodating / لطيف / مرحب
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 11 (Question 11) -->
+    <div class="question-page" id="page11">
+      <fieldset>
+        <legend>Question 11</legend>
+        <label>
+          <input type="radio" name="q11" value="D" required>
+          Relentless / اطلب التغيير
+        </label>
+        <label>
+          <input type="radio" name="q11" value="C">
+          Humble / غير مغرور
+        </label>
+        <label>
+          <input type="radio" name="q11" value="S">
+          Neighborly / ودود / احب الجيرة
+        </label>
+        <label>
+          <input type="radio" name="q11" value="I">
+          Talkative / ثرثار
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 12 (Question 12) -->
+    <div class="question-page" id="page12">
+      <fieldset>
+        <legend>Question 12</legend>
+        <label>
+          <input type="radio" name="q12" value="S" required>
+          Friendly / ودود
+        </label>
+        <label>
+          <input type="radio" name="q12" value="C">
+          Observant / دقيق الملاحظة
+        </label>
+        <label>
+          <input type="radio" name="q12" value="I">
+          Playful / مازح / احب المزح
+        </label>
+        <label>
+          <input type="radio" name="q12" value="D">
+          Strong-willed / قوي الإرادة
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 13 (Question 13) -->
+    <div class="question-page" id="page13">
+      <fieldset>
+        <legend>Question 13</legend>
+        <label>
+          <input type="radio" name="q13" value="I" required>
+          Charming / فاتن / مثير للاهتمام
+        </label>
+        <label>
+          <input type="radio" name="q13" value="D">
+          Adventurous / مغامر
+        </label>
+        <label>
+          <input type="radio" name="q13" value="C">
+          Disciplined / منضبط / ملتزم
+        </label>
+        <label>
+          <input type="radio" name="q13" value="S">
+          Deliberate / متأن / هادف
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 14 (Question 14) -->
+    <div class="question-page" id="page14">
+      <fieldset>
+        <legend>Question 14</legend>
+        <label>
+          <input type="radio" name="q14" value="C" required>
+          Restrained / كتوم
+        </label>
+        <label>
+          <input type="radio" name="q14" value="S">
+          Steady / ثابت
+        </label>
+        <label>
+          <input type="radio" name="q14" value="D">
+          Aggressive / عدواني
+        </label>
+        <label>
+          <input type="radio" name="q14" value="I">
+          Attractive / جذاب / مسر للغير
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 15 (Question 15) -->
+    <div class="question-page" id="page15">
+      <fieldset>
+        <legend>Question 15</legend>
+        <label>
+          <input type="radio" name="q15" value="I" required>
+          Enthusiastic / متحمس
+        </label>
+        <label>
+          <input type="radio" name="q15" value="C">
+          Analytical / تحليلي
+        </label>
+        <label>
+          <input type="radio" name="q15" value="S">
+          Sympathetic / متعاطف
+        </label>
+        <label>
+          <input type="radio" name="q15" value="D">
+          Determined / عاقد العزم
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 16 (Question 16) -->
+    <div class="question-page" id="page16">
+      <fieldset>
+        <legend>Question 16</legend>
+        <label>
+          <input type="radio" name="q16" value="D" required>
+          Commanding / آمر / مسيطر
+        </label>
+        <label>
+          <input type="radio" name="q16" value="I">
+          Impulsive / متهور / مندفع
+        </label>
+        <label>
+          <input type="radio" name="q16" value="S">
+          Slow-paced / بطيء
+        </label>
+        <label>
+          <input type="radio" name="q16" value="C">
+          Critical / ناقد
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 17 (Question 17) -->
+    <div class="question-page" id="page17">
+      <fieldset>
+        <legend>Question 17</legend>
+        <label>
+          <input type="radio" name="q17" value="C" required>
+          Consistent / راسخ
+        </label>
+        <label>
+          <input type="radio" name="q17" value="D">
+          Force-of-character / قوي الشخصية / احفز الآخرين
+        </label>
+        <label>
+          <input type="radio" name="q17" value="I">
+          Lively / مفعم بالحيوية
+        </label>
+        <label>
+          <input type="radio" name="q17" value="S">
+          Laid-back / مسترخ / لست على عجلة
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 18 (Question 18) -->
+    <div class="question-page" id="page18">
+      <fieldset>
+        <legend>Question 18</legend>
+        <label>
+          <input type="radio" name="q18" value="I" required>
+          Influential / مؤثر
+        </label>
+        <label>
+          <input type="radio" name="q18" value="S">
+          Kind / لطيف
+        </label>
+        <label>
+          <input type="radio" name="q18" value="D">
+          Independent / مستقل
+        </label>
+        <label>
+          <input type="radio" name="q18" value="C">
+          Orderly / مرتب
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 19 (Question 19) -->
+    <div class="question-page" id="page19">
+      <fieldset>
+        <legend>Question 19</legend>
+        <label>
+          <input type="radio" name="q19" value="C" required>
+          Idealistic / مثالي
+        </label>
+        <label>
+          <input type="radio" name="q19" value="I">
+          Popular / أتمتع بالشعبية
+        </label>
+        <label>
+          <input type="radio" name="q19" value="S">
+          Pleasant / مبهج / ممتع
+        </label>
+        <label>
+          <input type="radio" name="q19" value="D">
+          Out-spoken / صريح
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 20 (Question 20) -->
+    <div class="question-page" id="page20">
+      <fieldset>
+        <legend>Question 20</legend>
+        <label>
+          <input type="radio" name="q20" value="D" required>
+          Impatient / عديم الصبر
+        </label>
+        <label>
+          <input type="radio" name="q20" value="C">
+          Serious / جاد
+        </label>
+        <label>
+          <input type="radio" name="q20" value="S">
+          Procrastinator / مماطل
+        </label>
+        <label>
+          <input type="radio" name="q20" value="I">
+          Emotional / عاطفي
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 21 (Question 21) -->
+    <div class="question-page" id="page21">
+      <fieldset>
+        <legend>Question 21</legend>
+        <label>
+          <input type="radio" name="q21" value="D" required>
+          Competitive / منافس / محدد المطالب
+        </label>
+        <label>
+          <input type="radio" name="q21" value="I">
+          Spontaneous / عفوي / تلقائي
+        </label>
+        <label>
+          <input type="radio" name="q21" value="S">
+          Loyal / وفي / مخلص
+        </label>
+        <label>
+          <input type="radio" name="q21" value="C">
+          Thoughtful / أراعي مشاعر الآخرين
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 22 (Question 22) -->
+    <div class="question-page" id="page22">
+      <fieldset>
+        <legend>Question 22</legend>
+        <label>
+          <input type="radio" name="q22" value="S" required>
+          Self-sacrificing / مضحي
+        </label>
+        <label>
+          <input type="radio" name="q22" value="C">
+          Considerate / ملاطف / أراعي مشاعر الغير
+        </label>
+        <label>
+          <input type="radio" name="q22" value="I">
+          Convincing / مقنع
+        </label>
+        <label>
+          <input type="radio" name="q22" value="D">
+          Courageous / شجاع
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 23 (Question 23) -->
+    <div class="question-page" id="page23">
+      <fieldset>
+        <legend>Question 23</legend>
+        <label>
+          <input type="radio" name="q23" value="S" required>
+          Dependent / اعتمد على الآخرين
+        </label>
+        <label>
+          <input type="radio" name="q23" value="I">
+          Flighty / متقلب / طائش
+        </label>
+        <label>
+          <input type="radio" name="q23" value="C">
+          Stoic / رزين / جامد في مشاعري
+        </label>
+        <label>
+          <input type="radio" name="q23" value="D">
+          Pushy / متطاول / ملح
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="button" onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Page 24 (Question 24) -->
+    <div class="question-page" id="page24">
+      <fieldset>
+        <legend>Question 24</legend>
+        <label>
+          <input type="radio" name="q24" value="S" required>
+          Tolerant / متسامح
+        </label>
+        <label>
+          <input type="radio" name="q24" value="C">
+          Conventional / متمسك بالتقاليد
+        </label>
+        <label>
+          <input type="radio" name="q24" value="I">
+          Stimulating / محفز
+        </label>
+        <label>
+          <input type="radio" name="q24" value="D">
+          Directing / موجه
+        </label>
+      </fieldset>
+      <button type="button" onclick="prevPage()">Previous</button>
+      <button type="submit">Submit Assessment</button>
+    </div>
+  </form>
+  
+  <div id="result"></div>
+  
+  <script>
+    let currentPage = 1;
+    const totalPages = 24;
+
+    // Function to display the given page and hide all others.
+    function showPage(page) {
+      for (let i = 1; i <= totalPages; i++) {
+        document.getElementById("page" + i).classList.remove("active");
+      }
+      document.getElementById("page" + page).classList.add("active");
+    }
+
+    // Moves to the next page after checking that an answer has been selected.
+    function nextPage() {
+      const radios = document.getElementsByName("q" + currentPage);
+      let answered = false;
+      for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+          answered = true;
+          break;
+        }
+      }
+      if (!answered) {
+        alert("Please select an option before proceeding.");
+        return;
+      }
+      if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    }
+
+    // Moves to the previous page.
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    }
+
+    // Handle form submission: tally scores for each DISC category and display the results.
+    document.getElementById("discForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const counts = { 'D': 0, 'I': 0, 'S': 0, 'C': 0 };
+      
+      for (let i = 1; i <= totalPages; i++) {
+        const radios = document.getElementsByName("q" + i);
+        for (let j = 0; j < radios.length; j++) {
+          if (radios[j].checked) {
+            counts[radios[j].value]++;
+          }
+        }
+      }
+      
+      let resultText = "<h2>Results</h2>";
+      resultText += "<p><strong>Dominance (D):</strong> " + counts["D"] + "</p>";
+      resultText += "<p><strong>Influence (I):</strong> " + counts["I"] + "</p>";
+      resultText += "<p><strong>Steadiness (S):</strong> " + counts["S"] + "</p>";
+      resultText += "<p><strong>Compliance (C):</strong> " + counts["C"] + "</p>";
+      
+      const max = Math.max(counts["D"], counts["I"], counts["S"], counts["C"]);
+      const personality = [];
+      for (let trait in counts) {
+        if (counts[trait] === max) {
+          personality.push(trait);
+        }
+      }
+      resultText += "<h3>Your DISC Personality: " + personality.join(", ") + "</h3>";
+      document.getElementById("result").innerHTML = resultText;
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+  </script>
+</body>
+</html>
